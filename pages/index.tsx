@@ -29,20 +29,21 @@ const QUERY = `query {
 }`;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  return client
-    .query(QUERY)
-    .toPromise()
-    .then((d) => {
-      console.log(d.data.paymethods)
-      return {
-        props: { paymethods: d.data.paymethods },
-      };
-    })
-    .catch((e) => {
-      return {
-        props: {},
-      };
-    });
+  // return client
+  //   .query(QUERY)
+  //   .toPromise()
+  //   .then((d) => {
+  //     console.log(d.data.paymethods)
+  //     return {
+  //       props: { paymethods: d.data.paymethods },
+  //     };
+  //   })
+  //   .catch((e) => {
+  //   });
+
+    return {
+      props: {},
+    };
 };
 
 export default Home;
