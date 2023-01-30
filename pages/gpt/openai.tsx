@@ -14,7 +14,7 @@ interface PropsI {
 export default function GptPage() {
   const [prompt, setPrompt] = useState<PropsI["data"] | undefined>();
 
-  const [message, setMessage] = useState<string>("react");
+  const [message, setMessage] = useState<string>("openai");
 
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState(false);
@@ -37,7 +37,7 @@ export default function GptPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:3002/api/gpt/${message}`);
+      const res = await fetch(`/api/gpt/${message}`);
       const jsonData = (await res.json()) as PropsI["data"][];
       console.log(jsonData);
       return jsonData;
@@ -51,7 +51,7 @@ export default function GptPage() {
 
   return (
     <div className="p-10">
-      <h1 className="text-red-800 p-20 text-6xl justify-center">
+      <h1 className="text-red-700 p-20 text-6xl justify-center">
         Chat<span className="text-blue-500">GPT</span> <div className="text-sm">Next.ts</div>
       </h1>
       <div className="pb-20">
@@ -82,7 +82,7 @@ export default function GptPage() {
 }
 
 // export const getServerSideProps: GetServerSideProps = async () => {
-//   // const res = await fetch("http://localhost:3002/api/gpt/javascript");
+//   // const res = await fetch("http://localhost:3002/api/gpt/react");
 //   // const data = await res.json();
 //   // console.log(data);
 //   // pass data to the page via props
