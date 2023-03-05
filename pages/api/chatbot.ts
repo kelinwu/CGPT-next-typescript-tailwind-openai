@@ -1,6 +1,6 @@
 
 import type { NextApiRequest, NextApiResponse } from "next";
-import {Configuration, OpenAIApi} from "openai"
+// import {Configuration, OpenAIApi} from "openai"
 
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
     "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
@@ -11,7 +11,7 @@ export default async function handler(
     res: NextApiResponse
 ) {
     const { chatMessages } = req.body;
-    console.log("🚀 ~ file: [prompt].ts:14 ~ chatMessages:", chatMessages)
+    console.log("🚀 ~ file: chatbot.ts:14 ~ chatMessages:", chatMessages)
 
     let apiMessages = chatMessages?.map((messageObject:{sender:string, message:string}) => {
         let role = "";
