@@ -13,7 +13,7 @@ type MessageT = {
 export default function GptPage() {
     const [messages, setMessages] = useState<MessageT>([
         {
-            message: "Hello, I'm ChatGPT! Ask me anything!",
+            message: "Hello, I'm ChatGPT a 5 years experienced software professional! Ask me anything!",
             sentTime: "just now",
             sender: "ChatGPT"
         }
