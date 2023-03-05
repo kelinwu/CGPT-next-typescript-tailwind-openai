@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, MouseEventHandler, SetStateAction, useState } from "react";
 
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
     "role": "system", "content": "Explain things like you're talking to a software professional with 5 years of experience."
@@ -71,7 +71,7 @@ export default function GptPage() {
     const [isTyping, setIsTyping] = useState(false);
     const [inputValue, setInputValue] = useState("");
 
-    const handleSend = async (message: MessageT) => {
+    const handleSend = async () => {
         const newMessage = {
             message: inputValue,
             direction: 'outgoing',
